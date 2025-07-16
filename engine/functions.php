@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . '/../config/config.php';
 
-
 function db_connect() {
     static $db;
     if ($db === null) {
