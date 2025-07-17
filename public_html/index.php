@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../config/config.php';
-require_once __DIR__ . '/../engine/functions.php';
+require_once '../config/config.php';
+require_once '../engine/functions.php';
 
 // Обработка действий
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -35,12 +35,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             delete_comment($_POST['comment_id']);
         }
     }
-    header("Location: " . BASE_URL);
+    header("Location: /public_html/");
     exit;
 }
 
 // Подключение шаблонов
-require_once __DIR__ . '/../templates/header.php';
+require_once '../templates/header.php';
 ?>
 
 <div class="container mt-5">
@@ -86,7 +86,7 @@ require_once __DIR__ . '/../templates/header.php';
         <?php foreach (get_all_images() as $image): ?>
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="<?= IMG_URL . $image['filename'] ?>" class="card-img-top" alt="Image">
+                    <img src="img/<?= $image['filename'] ?>" class="card-img-top" alt="Image">
                     <div class="card-body">
                         <?php if (isset($_SESSION['user'])): ?>
                             <form method="POST" class="text-right mb-3">
@@ -137,4 +137,4 @@ require_once __DIR__ . '/../templates/header.php';
     </div>
 </div>
 
-<?php require_once __DIR__ . '/../templates/footer.php'; ?>
+<?php require_once '../templates/footer.php'; ?>

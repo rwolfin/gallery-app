@@ -11,8 +11,8 @@ define('MAX_FILE_SIZE', 5 * 1024 * 1024); // 5MB
 define('ALLOWED_TYPES', ['image/jpeg', 'image/png', 'image/gif']);
 
 
-define('BASE_URL', 'http://localhost:8000');
-define('IMG_URL', BASE_URL . '/img/');
+define('BASE_URL', 'localhost');
+define('IMG_URL', BASE_URL . '/public_html/img/');
 
 
 session_start();
